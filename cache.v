@@ -1,6 +1,10 @@
 `timescale 1ns / 1ps
 
-module cache(input[31:0] address, input[127:0] data_line, input clock, output reg[31:0] instruction, output reg hit);
+module cache(
+	input[31:0] address, input[127:0] data_line, input clock, 
+	output reg[31:0] instruction, output reg hit
+	);
+		
 	reg[153:0]cache[7:0];
 	
 	integer cache_index, tag, valid_bit, offset;

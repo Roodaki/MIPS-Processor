@@ -1,7 +1,11 @@
 `timescale 1ns / 1ps
 
 // A Memory Which Reads A 128-Bits Data Line Consist of Four 32-Bits Assembled Instructions According to the Inputted Address.
-module instruction_memory(input[31:0] address, input clock,output reg[127:0] data_line);
+module instruction_memory(
+	input[31:0] address, input clock,
+	output reg[127:0] data_line
+	);
+	
 	reg[2:0] counter;
 	reg[7:0] instruction_memory [0:1023];
 	reg[27:0] upper_28bits_of_address;
@@ -10,7 +14,7 @@ module instruction_memory(input[31:0] address, input clock,output reg[127:0] dat
 	initial
 		begin
 			counter = 3'b000;
-			$readmemh("instruction_memory.txt", instruction_memory);
+			$readmemh("instruction_memory_2.txt", instruction_memory);
 		end
 	
 	always @(posedge clock)
