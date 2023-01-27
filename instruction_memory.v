@@ -14,7 +14,7 @@ module instruction_memory(
 	initial
 		begin
 			counter = 3'b000;
-			$readmemh("instruction_memory_2.txt", instruction_memory);
+			$readmemh("instruction_memory.txt", instruction_memory);
 		end
 	
 	always @(posedge clock)
